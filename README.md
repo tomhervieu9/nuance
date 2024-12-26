@@ -7,3 +7,9 @@ Nuance consists of a gamified debate experience, where participants agree to cer
 This is a fun but daring game aimed at angry Twitter/X users. Since everyone thinks that they are right, then perhaps most people will be down to spend the money to fight it out in this arena. After all, who doesn't  want to challenge people they think are "idiots" and take their money? Chances are, many people will learn their lesson and realize that they're arguments aren't that strong, and that they relied on dishonest tactics to feel like they are right in arguments online.
 
 If this game is executed well, it could be extremely popular and healthy for individuals. It would expose the real weight of people's arguments and the amount of dishonesty that they use when engaging. It also helps us see where the truth tends to end up. We live in a world where it's hard to know what's true and what's false. This game, after being played by many people, can potentially help shed light on that. However, Part 2 is more dedicated to that, Partf 1 is more focused more on making the game fun, fair, and having high engagement, both from participants and people watching participants.
+
+© 2024 Thomas Hervieu. All rights reserved.
+
+This repository is made public for demonstration and portfolio purposes.
+No license is granted for commercial or non-commercial use. Please contact
+tom.hervieu@gmail.com if you wish to use or modify any part of this code.
