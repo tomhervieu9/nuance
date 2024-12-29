@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LikeButton from "./like-button";
+import LikeButton from "./ui/like-button";
 
 export default function Home() {
   return (
