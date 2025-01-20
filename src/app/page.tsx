@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LikeButton from "./ui/like-button";
+import LikeButton from "./ui/global/like-button";
 import { lusitana } from "./ui/fonts";
 
 export default function Home() {

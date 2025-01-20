@@ -1,4 +1,4 @@
-import SideNav from "@nuance/ui/side-nav";
+import SideNav from "@/app/ui/global/side-nav";
 
 export default function Layout(props: { children: React.ReactNode }) {
   return (
