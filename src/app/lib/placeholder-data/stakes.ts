@@ -1,7 +1,7 @@
 import { IStake } from "../interfaces/IStake";
 import { users } from "./users";
 
-const stake: IStake[] = [
+const stakes: IStake[] = [
   {
     userId: users[0].id,
     amount: 15795,
