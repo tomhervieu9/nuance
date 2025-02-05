@@ -25,6 +25,7 @@ export default class DuelSystem {
     challengeeId: string,
     params: IChallengeParams
   ): boolean {
+    console.log("hello world", Users.users);
     const users = Users.users.map((user) => user.id);
 
     // Check that challengerId is valid
