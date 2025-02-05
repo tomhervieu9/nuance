@@ -13,7 +13,7 @@ export default class DuelSystem {
   }
 
   /**
-   * Creates a new challenge between two users.
+   * Creates a new challenge (pending duel) between two users.
    *
    * @param challengerId The ID of the user who issued the challenge.
    * @param challengeeId The ID of the user who was challenged.
