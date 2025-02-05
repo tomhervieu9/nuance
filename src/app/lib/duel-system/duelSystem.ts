@@ -6,7 +6,7 @@ import { IDuel } from "./interfaces/IDuel";
  * The system that deals with managing user-to-user duels.
  */
 export default class DuelSystem {
-  activeDuels: IDuel[] = [];
+  private _activeDuels: IDuel[] = [];
 
   constructor() {
     // Initialize
@@ -47,7 +47,7 @@ export default class DuelSystem {
       new Date()
     );
 
-    this.activeDuels.push(newDuel);
+    this._activeDuels.push(newDuel);
 
     return true;
   }
