@@ -1,12 +1,12 @@
 import { assert } from "console";
-import { IChallengeParams } from "./interfaces/IChallengeParams";
+import { IDuelParams } from "./interfaces/IDuelParams";
 import { IDuel } from "./interfaces/IDuel";
 import { IDuelTimings } from "./interfaces/IDuelTimings";
 import { DuelStatus } from "./types/DuelStatus";
 
 export default class Duel implements IDuel {
   private _id: string;
-  private _challengeParams: IChallengeParams;
+  private _duelParams: IDuelParams;
   private _challengerArgument: string;
   private _challengeeArgument: string;
   private _status: DuelStatus;
@@ -14,13 +14,13 @@ export default class Duel implements IDuel {
 
   constructor(
     id: string,
-    challengeParams: IChallengeParams,
+    duelParams: IDuelParams,
     challengerArgument: string,
     challengeeArgument: string,
     currentTime: Date
   ) {
     this._id = id;
-    this._challengeParams = challengeParams;
+    this._duelParams = duelParams;
     this._challengerArgument = challengerArgument;
     this._challengeeArgument = challengeeArgument;
     this._status = DuelStatus.PENDING;

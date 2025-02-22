@@ -1,4 +1,4 @@
-export interface IChallengeParams {
+export interface IDuelParams {
   /**
    * The question posed by the challenger, which will become the topic of the duel.
    */

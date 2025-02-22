@@ -1,5 +1,5 @@
 import DuelSystem from "../duelSystem";
-import { IChallengeParams } from "../interfaces/IChallengeParams";
+import { IDuelParams } from "../interfaces/IDuelParams";
 import { beforeEach, describe, expect, it } from "@jest/globals";
 
 // Mock the Users class.
@@ -24,14 +24,14 @@ describe("DuelSystem", () => {
     duelSystem = new DuelSystem();
   });
 
-  describe("createChallenge", () => {
-    it("should create a challenge successfully when both users are valid", () => {
-      const params: IChallengeParams = {
+  describe("createDuel", () => {
+    it("should create a duel successfully when both users are valid", () => {
+      const params: IDuelParams = {
         question: "Is this a valid question?",
         minStakeAmount: 2,
         timeToAccept: 100,
       };
-      const result = duelSystem.createChallenge("user1", "user2", params);
+      const result = duelSystem.createDuel("user1", "user2", params);
       expect(result).toBe(true);
     });
   });

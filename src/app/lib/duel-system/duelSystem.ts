@@ -1,5 +1,5 @@
 import Duel from "./duel";
-import { IChallengeParams } from "./interfaces/IChallengeParams";
+import { IDuelParams } from "./interfaces/IDuelParams";
 import Users from "@nuance/lib/users/Users";
 import { IDuel } from "./interfaces/IDuel";
 /**
@@ -20,10 +20,10 @@ export default class DuelSystem {
    * @param params The parameters of the challenge.
    * @returns True if the challenge was created successfully, false otherwise.
    */
-  public createChallenge(
+  public createDuel(
     challengerId: string,
     challengeeId: string,
-    params: IChallengeParams
+    params: IDuelParams
   ): boolean {
     console.log("hello world", Users.users);
     const users = Users.users.map((user) => user.id);
