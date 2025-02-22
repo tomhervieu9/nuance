@@ -5,9 +5,9 @@ export interface IDuelParams {
   question: string;
 
   /**
-   * The minimum amount (in USD) that both challenger and challengee must stake for the duel to start.
+   * The amount (in USD) that both challenger and challengee must stake for the duel to start.
    */
-  minStakeAmount: number;
+  stake: number;
 
   /**
    * The time (in seconds) that the challengee has to accept the challenge.

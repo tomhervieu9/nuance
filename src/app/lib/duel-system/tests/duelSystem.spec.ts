@@ -28,11 +28,23 @@ describe("DuelSystem", () => {
     it("should create a duel successfully when both users are valid", () => {
       const params: IDuelParams = {
         question: "Is this a valid question?",
-        minStakeAmount: 2,
+        stake: 2,
         timeToAccept: 100,
       };
       const result = duelSystem.createDuel("user1", "user2", params);
       expect(result).toBe(true);
+
+      // Ensure only 1 duel was created.
+      expect(duelSystem.duels.length).toBe(1);
+
+      // Ensure the duel was created and populated with the correct information.
+      const duel = duelSystem.duels[0];
+      expect(duel.challenger.id).toBe("user1");
+      expect(duel.challengee.id).toBe("user2");
+      expect(duel.duelParams.question).toBe("Is this a valid question?");
+      expect(duel.duelParams.stake).toBe(2);
+      expect(duel.duelParams.timeToAccept).toBe(100);
+      expect(duel.status).toBe("PENDING");
     });
   });
 });

@@ -1,36 +1,79 @@
 import { assert } from "console";
 import { IDuelParams } from "./interfaces/IDuelParams";
 import { IDuel } from "./interfaces/IDuel";
-import { IDuelTimings } from "./interfaces/IDuelTimings";
+import { IDuelTimestamps } from "./interfaces/IDuelTimestamps";
 import { DuelStatus } from "./types/DuelStatus";
+import { IPlayer } from "./interfaces/IPlayer";
 
 export default class Duel implements IDuel {
   private _id: string;
   private _duelParams: IDuelParams;
-  private _challengerArgument: string;
-  private _challengeeArgument: string;
+  private _challenger: IPlayer;
+  private _challengee: IPlayer;
   private _status: DuelStatus;
-  private _timings: IDuelTimings;
+  private _timings: IDuelTimestamps;
 
   constructor(
     id: string,
     duelParams: IDuelParams,
-    challengerArgument: string,
-    challengeeArgument: string,
-    currentTime: Date
+    challenger: IPlayer,
+    challengee: IPlayer,
+    creationTime: Date
   ) {
     this._id = id;
     this._duelParams = duelParams;
-    this._challengerArgument = challengerArgument;
-    this._challengeeArgument = challengeeArgument;
+    this._challenger = challenger;
+    this._challengee = challengee;
     this._status = DuelStatus.PENDING;
     this._timings = {
-      challengeTime: currentTime,
+      challengeTime: creationTime,
       startTime: undefined,
       completedTime: undefined,
       rejectedTime: undefined,
       cancelledTime: undefined,
     };
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public get id(): string {
+    return this._id;
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public get duelParams(): IDuelParams {
+    return this._duelParams;
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public get challenger(): IPlayer {
+    return this._challenger;
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public get challengee(): IPlayer {
+    return this._challengee;
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public get status(): DuelStatus {
+    return this._status;
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public get timings(): IDuelTimestamps {
+    return this._timings;
   }
 
   /**
@@ -51,12 +94,5 @@ export default class Duel implements IDuel {
           newStatus === DuelStatus.REJECTED),
       "New status must be different from the current status."
     );
-  }
-
-  /**
-   * @inheritdoc
-   */
-  getDuelStatus(): DuelStatus {
-    return this._status;
   }
 }

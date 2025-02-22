@@ -1,7 +1,7 @@
 /**
  * Interface for the metadata of a duel.
  */
-export interface IDuelTimings {
+export interface IDuelTimestamps {
   /**
    * The time at which the challenge was requested by the challenger.
    */
