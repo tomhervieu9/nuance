@@ -35,7 +35,7 @@ export interface IDuel {
   /**
    * The timestamps of the duel.
    */
-  readonly timings: IDuelTimestamps;
+  readonly timestamps: IDuelTimestamps;
 
   /**
    * Starts the debate.

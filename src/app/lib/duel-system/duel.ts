@@ -14,7 +14,7 @@ export default class Duel implements IDuel {
   private _challenger: IPlayer;
   private _challengee: IPlayer;
   private _status: DuelStatus;
-  private _timings: IDuelTimestamps;
+  private _timestamps: IDuelTimestamps;
 
   /**
    * Constructor.
@@ -37,7 +37,7 @@ export default class Duel implements IDuel {
     this._challenger = challenger;
     this._challengee = challengee;
     this._status = DuelStatus.PENDING;
-    this._timings = {
+    this._timestamps = {
       challengeTime: creationTime,
       startTime: undefined,
       completedTime: undefined,
@@ -84,8 +84,8 @@ export default class Duel implements IDuel {
   /**
    * @inheritdoc
    */
-  public get timings(): IDuelTimestamps {
-    return this._timings;
+  public get timestamps(): IDuelTimestamps {
+    return this._timestamps;
   }
 
   /**
