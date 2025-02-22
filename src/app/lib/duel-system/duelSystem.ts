@@ -3,11 +3,14 @@ import { IDuelParams } from "./interfaces/IDuelParams";
 import Users from "@nuance/lib/users/Users";
 import { IDuel } from "./interfaces/IDuel";
 import Player from "./player";
+import assert from "@nuance/utils/assertions";
+
 /**
  * The system that deals with managing user-to-user duels.
  */
 export default class DuelSystem {
-  private _duels: IDuel[] = [];
+  // Key: Duel ID, Value: Duel
+  private _duels: Record<string, IDuel> = {};
 
   constructor() {
     // Initialize
@@ -40,6 +43,7 @@ export default class DuelSystem {
     }
 
     // Create a pending duel
+    // FIXME: Replace these magic strings.
     const newDuel = new Duel(
       "someuniqueid",
       params,
@@ -48,12 +52,53 @@ export default class DuelSystem {
       new Date()
     );
 
-    this._duels.push(newDuel);
+    // Ensure the same duel ID does not already exist.
+    assert(
+      this._duels[newDuel.id] === undefined,
+      "Cannot create duel. Duel ID already exists"
+    );
+
+    this._duels[newDuel.id] = newDuel;
 
     return true;
   }
 
-  public get duels(): IDuel[] {
-    return this._duels;
+  /**
+   * Gets the duel(s) according the specified params.
+   *
+   * @param id The ID of the duel to get.
+   * @returns The duel with the specified ID, or undefined if not found.
+   */
+  public getDuels(ids?: string[]): IDuel[] {
+    const duelsToGet: IDuel[] = [];
+
+    // If no IDs are specified, return all duels.
+    if (ids === undefined) {
+      const duels = Object.values(this._duels);
+
+      duels.forEach((duel) =>
+        assert(
+          duel !== undefined,
+          `Cannot get duels. Duel with ID ${duel.id} not found.`
+        )
+      );
+
+      return duels;
+    }
+
+    // Get the duels with the specified IDs.
+    ids.forEach((id) => {
+      const duel = this._duels[id];
+
+      // Ensure the duel exists.
+      assert(
+        duel !== undefined,
+        `Cannot get duel. Duel with ID ${id} not found.`
+      );
+
+      duelsToGet.push(duel);
+    });
+
+    return duelsToGet;
   }
 }

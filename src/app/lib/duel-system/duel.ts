@@ -1,9 +1,9 @@
-import { assert } from "console";
 import { IDuelParams } from "./interfaces/IDuelParams";
 import { IDuel } from "./interfaces/IDuel";
 import { IDuelTimestamps } from "./interfaces/IDuelTimestamps";
 import { DuelStatus } from "./types/DuelStatus";
 import { IPlayer } from "./interfaces/IPlayer";
+import assert from "@nuance/utils/assertions";
 
 /**
  * A duel between two players.
@@ -99,12 +99,14 @@ export default class Duel implements IDuel {
    * @inheritdoc
    */
   endDuel(newStatus: DuelStatus): void {
+    // Ensure the new status is valid for ending the duel.
     assert(
-      newStatus !== this._status &&
-        (newStatus === DuelStatus.COMPLETED ||
-          newStatus === DuelStatus.CANCELLED ||
-          newStatus === DuelStatus.REJECTED),
-      "New status must be different from the current status."
+      [
+        DuelStatus.COMPLETED,
+        DuelStatus.CANCELLED,
+        DuelStatus.REJECTED,
+      ].includes(newStatus),
+      `Cannot end duel with ID:${this._id} Invalid status for ending the duel.`
     );
   }
 }

@@ -35,10 +35,10 @@ describe("DuelSystem", () => {
       expect(result).toBe(true);
 
       // Ensure only 1 duel was created.
-      expect(duelSystem.duels.length).toBe(1);
+      expect(duelSystem.getDuels().length).toBe(1);
 
       // Ensure the duel was created and populated with the correct information.
-      const duel = duelSystem.duels[0];
+      const duel = duelSystem.getDuels()[0];
       expect(duel.challenger.id).toBe("user1");
       expect(duel.challengee.id).toBe("user2");
       expect(duel.duelParams.question).toBe("Is this a valid question?");

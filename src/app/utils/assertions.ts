@@ -3,11 +3,8 @@
  * @param condition - The condition to check.
  * @param message - The error message to throw if the condition is false.
  */
-export const assert = (
-  condition: boolean,
-  message: string
-): asserts condition => {
+export default function assert(condition: boolean, message: string): void {
   if (!condition) {
     throw new Error(message);
   }
-};
+}
