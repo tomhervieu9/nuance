@@ -1,3 +1,6 @@
+/**
+ * Represents a player in a duel.
+ */
 export interface IPlayer {
   /**
    * The player's user ID.

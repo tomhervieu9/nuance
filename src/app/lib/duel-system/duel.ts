@@ -5,6 +5,9 @@ import { IDuelTimestamps } from "./interfaces/IDuelTimestamps";
 import { DuelStatus } from "./types/DuelStatus";
 import { IPlayer } from "./interfaces/IPlayer";
 
+/**
+ * A duel between two players.
+ */
 export default class Duel implements IDuel {
   private _id: string;
   private _duelParams: IDuelParams;
@@ -13,6 +16,15 @@ export default class Duel implements IDuel {
   private _status: DuelStatus;
   private _timings: IDuelTimestamps;
 
+  /**
+   * Constructor.
+   *
+   * @param id The unique ID of the duel.
+   * @param duelParams The duel creation parameters.
+   * @param challenger The player offering the challenge to this duel.
+   * @param challengee The player receiving the challenge to this duel.
+   * @param creationTime The time the duel challenge was created by the challenger.
+   */
   constructor(
     id: string,
     duelParams: IDuelParams,
