@@ -1,7 +1,7 @@
 import { DuelStatus } from "../types/DuelStatus";
 import { IDuelParams } from "./IDuelParams";
 import { IDuelTimestamps } from "./IDuelTimestamps";
-import { IPlayer } from "./IPlayer";
+import { IPlayer } from "./IPlayerInfo";
 
 /**
  * Interface for a Duel.

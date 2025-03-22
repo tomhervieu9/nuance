@@ -1,9 +1,9 @@
-import { IPlayer } from "./interfaces/IPlayer";
+import { IPlayerInfo } from "./interfaces/IPlayerInfo";
 
 /**
  * A player in a duel.
  */
-export default class Player implements IPlayer {
+export default class PlayerInfo implements IPlayerInfo {
   private _id: string;
   private _username: string;
   private _argument: string;

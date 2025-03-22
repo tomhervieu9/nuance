@@ -2,14 +2,14 @@ import Duel from "./duel";
 import { IDuelParams } from "./interfaces/IDuelParams";
 import Users from "@nuance/lib/users/Users";
 import { IDuel } from "./interfaces/IDuel";
-import Player from "./player";
+import PlayerInfo from "./playerInfo";
 import assert from "@nuance/utils/assertions";
 
 /**
  * The system that deals with managing user-to-user duels.
  */
 export default class DuelSystem {
-  // Key: Duel ID, Value: Duel
+  // A collection of duels keyes on their ID.
   private _duels: Record<string, IDuel> = {};
 
   constructor() {
@@ -47,8 +47,8 @@ export default class DuelSystem {
     const newDuel = new Duel(
       "someuniqueid",
       params,
-      new Player(challengerId, "username", "argument"),
-      new Player(challengeeId, "username", "argument"),
+      new PlayerInfo(challengerId, "username", "argument"),
+      new PlayerInfo(challengeeId, "username", "argument"),
       new Date()
     );
 

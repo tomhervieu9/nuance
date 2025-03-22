@@ -1,7 +1,7 @@
 /**
- * Represents a player in a duel.
+ * Represents the info about a player in a duel.
  */
-export interface IPlayer {
+export interface IPlayerInfo {
   /**
    * The player's user ID.
    */

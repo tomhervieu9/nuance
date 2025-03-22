@@ -2,7 +2,7 @@ import { IDuelParams } from "./interfaces/IDuelParams";
 import { IDuel } from "./interfaces/IDuel";
 import { IDuelTimestamps } from "./interfaces/IDuelTimestamps";
 import { DuelStatus } from "./types/DuelStatus";
-import { IPlayer } from "./interfaces/IPlayer";
+import { IPlayerInfo } from "./interfaces/IPlayerInfo";
 import assert from "@nuance/utils/assertions";
 
 /**
@@ -11,8 +11,8 @@ import assert from "@nuance/utils/assertions";
 export default class Duel implements IDuel {
   private _id: string;
   private _duelParams: IDuelParams;
-  private _challenger: IPlayer;
-  private _challengee: IPlayer;
+  private _challenger: IPlayerInfo;
+  private _challengee: IPlayerInfo;
   private _status: DuelStatus;
   private _timestamps: IDuelTimestamps;
 
@@ -28,8 +28,8 @@ export default class Duel implements IDuel {
   constructor(
     id: string,
     duelParams: IDuelParams,
-    challenger: IPlayer,
-    challengee: IPlayer,
+    challenger: IPlayerInfo,
+    challengee: IPlayerInfo,
     creationTime: Date
   ) {
     this._id = id;
@@ -63,14 +63,14 @@ export default class Duel implements IDuel {
   /**
    * @inheritdoc
    */
-  public get challenger(): IPlayer {
+  public get challenger(): IPlayerInfo {
     return this._challenger;
   }
 
   /**
    * @inheritdoc
    */
-  public get challengee(): IPlayer {
+  public get challengee(): IPlayerInfo {
     return this._challengee;
   }
 
