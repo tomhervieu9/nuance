@@ -2,18 +2,14 @@ import DuelSystem from "../duelSystem";
 import { IDuelParams } from "../interfaces/IDuelParams";
 import { beforeEach, describe, expect, it } from "@jest/globals";
 
-// Mock the Users class.
-jest.mock("@nuance/lib/users/Users", () => {
+// Mock the dummy user data.
+jest.mock("./../../users/dummyUsers", () => {
   return {
-    __esModule: true,
-    default: {
-      get users() {
-        return [
-          { id: "user1", name: "User One" },
-          { id: "user2", name: "User Two" },
-        ];
-      },
-    },
+    __esModule: true, // Ensures the mock is treated as an ES module
+    dummyUsers: [
+      { id: "user1", name: "Carl", availableFunds: 100 },
+      { id: "user2", name: "Jen", availableFunds: 50 },
+    ],
   };
 });
 

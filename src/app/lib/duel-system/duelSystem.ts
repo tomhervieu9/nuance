@@ -1,9 +1,9 @@
 import Duel from "./duel";
 import { IDuelParams } from "./interfaces/IDuelParams";
-import Users from "@nuance/lib/users/Users";
 import { IDuel } from "./interfaces/IDuel";
 import PlayerInfo from "./playerInfo";
 import assert from "@nuance/utils/assertions";
+import { dummyUsers } from "../users/dummyUsers";
 
 /**
  * The system that deals with managing user-to-user duels.
@@ -29,8 +29,8 @@ export default class DuelSystem {
     challengeeId: string,
     params: IDuelParams
   ): boolean {
-    // FIXME: Replace with actual user IDs. This is using dummy data.
-    const users = Users.users.map((user) => user.id);
+    // Get all user IDs.
+    const users = dummyUsers.map((user) => user.id);
 
     // Check that challengerId is valid
     if (!users.includes(challengerId)) {
