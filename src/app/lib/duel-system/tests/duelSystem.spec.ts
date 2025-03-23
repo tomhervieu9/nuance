@@ -1,6 +1,6 @@
 import DuelSystem from "../duelSystem";
 import { IDuelParams } from "../interfaces/IDuelParams";
-import { beforeEach, describe, expect, it } from "@jest/globals";
+import { describe, expect, it } from "@jest/globals";
 
 // Mock the dummy user data.
 jest.mock("./../../users/dummyUsers", () => {
@@ -14,11 +14,7 @@ jest.mock("./../../users/dummyUsers", () => {
 });
 
 describe("DuelSystem", () => {
-  let duelSystem: DuelSystem;
-
-  beforeEach(() => {
-    duelSystem = new DuelSystem();
-  });
+  const duelSystem: DuelSystem = new DuelSystem();
 
   describe("createDuel", () => {
     it("should create a duel successfully when both users are valid", () => {

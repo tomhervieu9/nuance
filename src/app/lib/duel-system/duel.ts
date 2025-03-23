@@ -93,6 +93,7 @@ export default class Duel implements IDuel {
    */
   startDuel(): void {
     console.log(`Duel Status: ${this._status}.`);
+    this._status = DuelStatus.ACTIVE;
   }
 
   /**

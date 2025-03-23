@@ -15,5 +15,5 @@ export interface IPlayerInfo {
   /**
    * The player's argument.
    */
-  argument: string;
+  argument: string | undefined;
 }
