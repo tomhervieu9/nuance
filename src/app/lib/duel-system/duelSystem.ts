@@ -3,7 +3,7 @@ import { IDuelParams } from "./interfaces/IDuelParams";
 import { IDuel } from "./interfaces/IDuel";
 import PlayerInfo from "./playerInfo";
 import assert from "@nuance/utils/assertions";
-import { dummyUsers } from "../users/dummyUsers";
+import { dummyUsers } from "../placeholder-data/dummyUsers";
 
 /**
  * The system that deals with managing user-to-user duels.

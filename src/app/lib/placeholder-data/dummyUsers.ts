@@ -1,6 +1,5 @@
-import { IUser } from "../interfaces/IUser";
+import { IUser } from "../duel-system/interfaces/IUser";
 
-// This class is just a stub to provide user data.
 // TODO: replace with DB query.
 export const dummyUsers: IUser[] = [
   {
