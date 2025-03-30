@@ -1,9 +1,9 @@
 import Duel from "./duel";
 import { IDuelParams } from "./interfaces/IDuelParams";
 import { IDuel } from "./interfaces/IDuel";
-import PlayerInfo from "./playerInfo";
 import assert from "@nuance/utils/assertions";
 import { dummyUsers } from "../placeholder-data/dummyUsers";
+import { IPlayerInfo } from "./interfaces/IPlayerInfo";
 
 /**
  * The system that deals with managing user-to-user duels.
@@ -43,12 +43,23 @@ export default class DuelSystem {
     }
 
     // Create a pending duel
-    // FIXME: Replace these magic strings.
+    const challengerInfo: IPlayerInfo = {
+      id: challengerId,
+      username: "challengerUsername",
+      argument: "challengerArgument",
+    };
+
+    const challengeeInfo: IPlayerInfo = {
+      id: challengerId,
+      username: "challengeeUsername",
+      argument: "challengeeArgument",
+    };
+
     const newDuel = new Duel(
       "someuniqueid",
       params,
-      new PlayerInfo(challengerId, "username", "argument"),
-      new PlayerInfo(challengeeId, "username", "argument"),
+      challengerInfo,
+      challengeeInfo,
       new Date()
     );
 
