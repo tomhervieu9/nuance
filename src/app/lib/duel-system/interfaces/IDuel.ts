@@ -1,7 +1,7 @@
 import { DuelStatus } from "../types/DuelStatus";
 import { IDuelParams } from "./IDuelParams";
 import { IDuelTimestamps } from "./IDuelTimestamps";
-import { IPlayer } from "./IPlayerInfo";
+import { IPlayerInfo } from "./IPlayerInfo";
 
 /**
  * Interface for a Duel.
@@ -15,12 +15,12 @@ export interface IDuel {
   /**
    * The challenger.
    */
-  readonly challenger: IPlayer;
+  readonly challenger: IPlayerInfo;
 
   /**
    * The challengee.
    */
-  readonly challengee: IPlayer;
+  readonly challengee: IPlayerInfo;
 
   /**
    * The duel parameters.
