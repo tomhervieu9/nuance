@@ -8,8 +8,8 @@ jest.mock("./../../users/dummyUsers", () => {
   return {
     __esModule: true, // Ensures the mock is treated as an ES module
     dummyUsers: [
-      { id: "user1", name: "Carl", availableFunds: 100 },
-      { id: "user2", name: "Jen", availableFunds: 50 },
+      { id: "user1", name: "Carl", balance: 100 },
+      { id: "user2", name: "Jen", balance: 50 },
     ],
   };
 });
